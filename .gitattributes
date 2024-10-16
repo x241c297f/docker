@@ -2,7 +2,7 @@
 *           text=auto
 
 # Fix syntax highlighting on GitHub to allow comments
-.vscode/*.json  text=auto linguist-language=JSON-with-Comments
+.vscode/*.json  text linguist-language=JSON-with-Comments
 
 # Scripts
 *.bash      text eol=lf
@@ -14,3 +14,10 @@
 *.bat       text eol=crlf
 *.cmd       text eol=crlf
 *.ps1       text eol=crlf
+
+# Serialisation
+*.json      text
+*.toml      text
+*.xml       text
+*.yaml      text
+*.yml       text
