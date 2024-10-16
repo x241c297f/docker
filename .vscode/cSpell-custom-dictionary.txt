@@ -1,4 +1,13 @@
 autoremove
+DOCKERGROUPID
+getent
+GROUPID
+GROUPNAME
+iputils
 localtime
+maran
+NOPASSWD
+tracepath
 userdel
+USERID
 zoneinfo
