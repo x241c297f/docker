@@ -1,0 +1,16 @@
+# Auto detect text files and perform normalization
+*           text=auto
+
+# Fix syntax highlighting on GitHub to allow comments
+.vscode/*.json  text=auto linguist-language=JSON-with-Comments
+
+# Scripts
+*.bash      text eol=lf
+*.fish      text eol=lf
+*.ksh       text eol=lf
+*.sh        text eol=lf
+*.zsh       text eol=lf
+# These are explicitly windows files and should use crlf
+*.bat       text eol=crlf
+*.cmd       text eol=crlf
+*.ps1       text eol=crlf
