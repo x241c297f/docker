@@ -9,9 +9,10 @@ GROUPNAME=$(id -gn)
 GROUPID=$(id -g)
 
 IMAGE_NAME=common-dev-base
+TAG=latest
 docker build \
     --pull \
-    -t x241c297f/${IMAGE_NAME}:latest \
+    -t ${USERNAME}/${IMAGE_NAME}:${TAG} \
     -f ./Dockerfile \
     --build-arg USERNAME=$USERNAME \
     --build-arg USERID="$USERID" \
