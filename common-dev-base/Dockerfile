@@ -28,6 +28,7 @@ END
 
 # Default packages
 RUN <<END
+    apt-get update
     apt-get install -y curl git iproute2 iputils-ping iputils-tracepath locales sudo vim zsh
     apt-get autoremove -y
     apt-get -y clean
