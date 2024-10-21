@@ -1,12 +1,16 @@
+autoload
 autoremove
+devcontainer
 DOCKERGROUPID
 getent
 GROUPID
 GROUPNAME
+HISTFILE
 iputils
 localtime
 maran
 NOPASSWD
+precmd
 tracepath
 userdel
 USERID

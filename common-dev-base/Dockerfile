@@ -68,4 +68,9 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 COPY --chown=${USERNAME}:${GROUPID} ["./custom-maran.zsh-theme", "/home/${USERNAME}/.oh-my-zsh/custom/themes/custom-maran.zsh-theme"]
 RUN sed -i.bak 's/^ZSH_THEME=.*$/ZSH_THEME="custom-maran"/' ~/.zshrc
 
+RUN SNIPPET="autoload -Uz add-zsh-hook; append_history() { fc -W }; add-zsh-hook precmd append_history; export HISTFILE=/home/${USERNAME}/devcontainer/zsh-history/.zsh_history" \
+    && mkdir -p /home/${USERNAME}/devcontainer/zsh-history \
+    && touch /home/${USERNAME}/devcontainer/zsh-history/.zsh_history \
+    && echo "${SNIPPET}" >> "/home/${USERNAME}/.zshrc"
+
 CMD [ "/bin/zsh" ]
