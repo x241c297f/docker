@@ -8,11 +8,11 @@ USERID=$(id -u)
 GROUPNAME=$(id -gn)
 GROUPID=$(id -g)
 
-IMAGE_NAME=common-dev-base
+IMAGE_NAME=$(basename "${SCRIPT_DIR}")
 TAG=latest
 docker build \
     --pull \
-    -t ${USERNAME}/${IMAGE_NAME}:${TAG} \
+    -t ${USERNAME}/"${IMAGE_NAME}":${TAG} \
     -f ./Dockerfile \
     --build-arg USERNAME=$USERNAME \
     --build-arg USERID="$USERID" \
@@ -21,4 +21,4 @@ docker build \
     "$@" \
     .
 
-docker push x241c297f/${IMAGE_NAME}:latest
+docker push "${USERNAME}"/"${IMAGE_NAME}":"${TAG}"
